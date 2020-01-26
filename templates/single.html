@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- //banner -->
+<!-- blog -->
+	<div class="blog">
+	<div class="container">
+		<div class="blog-left">
+			<div class="blog-left-text1">
+				<h3> Aenean eu odio nec dui tincidunt</h3>
+				<img src="static/images/h.jpg" alt=" " />
+				<p>Molestie sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere dit. 
+					Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consecteturs.
+					Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis,
+					lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,
+					consectetuer adipiscing elit. Praesent vestibulum molestie lacus. 
+					Aenean nonummy hendrerit mauris. Phasellus porta.Lorem ipsum dolor sit amet, 
+					consectetuer adipiscing elit. Praesent vestibulum molestie lacus. 
+					Aenean non ummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. 
+					Cum sociis sere natoque penati bus et magnis dis. Lorem ipsum dolor.
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem.
+					Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris.
+					Fusce suscipit varius mi.
+					Cum sociis natoque penatibus et magnis dis parturient montes, 
+					nascetur ridiculus mus.
+					Aenean non ummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. 
+					Cum sociis sere natoque penati bus et magnis dis. Lorem ipsum dolor.
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem.
+					Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris.
+					Fusce suscipit varius mi.Nulla dui. Fusce feugiat malesuada odio. Morbi…</p>
+			</div>
+		</div>
+		<div class="blog-right1">
+			<div class="search">
+				<h3>Search Here</h3>
+				<form>
+					<input type="text" placeholder="Search..." required=" ">
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+			<div class="categories">
+				<h3>Categories</h3>
+				<ul>
+					<li><a href="#">Aliquam dapibus tincidunt</a></li>
+					<li><a href="#">Donec sollicitudin molestie</a></li>
+					<li><a href="#">Fusce feugiat malesuada odio</a></li>
+					<li><a href="#">Cum sociis natoque penatibus</a></li>
+					<li><a href="#">Magnis dis parturient montes</a></li>
+					<li><a href="#">Donec sollicitudin molestie</a></li>
+				</ul>
+			</div>
+			<div class="categories categories-mid">
+				<h3>Archieves</h3>
+				<ul>
+					<li><a href="#">May 20,2009</a></li>
+					<li><a href="#">July 31,2010</a></li>
+					<li><a href="#">January 20,2012</a></li>
+					<li><a href="#">November 2,2012</a></li>
+					<li><a href="#">December 25,2014</a></li>
+					<li><a href="#">January 14,2015</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+		<div class="tags">
+				<div class="tags-left">
+					<ul>
+						<li><small class="para"> </small><span>January 3,2015</span></li>
+						<li><a href="#"><small class="para1"> </small><span>admin</span></a></li>
+						<li><a href="#"><small class="para2"> </small><span>No Comments</span></a></li>
+						<li><a href="#"><small class="para3"> </small><span>View posts</span></a></li>
+					</ul>
+				</div>
+				<div class="tags-right">
+					<ul>
+						<li><a href="#"><small class="para4"> </small><span>Permalink</span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+		</div>
+		<div class="related-posts">
+			<h3>Related Posts</h3>
+			<div class="related-post">
+				<img src="static/images/d.png" alt=" " />
+				<h4>Donec sollicitudin molestie</h4>
+				<p>Aliquam dapibus tincidunt metus. 
+					<span>Praesent justo dolor, lobortis.</span>
+				</p>
+			</div>
+			<div class="related-post related-post-mid">
+				<img src="static/images/c.jpg" alt=" " />
+				<h4>Donec sollicitudin molestie</h4>
+				<p>Aliquam dapibus tincidunt metus. 
+					<span>Praesent justo dolor, lobortis.</span>
+				</p>
+			</div>
+			<div class="related-post">
+				<img src="static/images/f.jpg" alt=" " />
+				<h4>Donec sollicitudin molestie</h4>
+				<p>Aliquam dapibus tincidunt metus. 
+					<span>Praesent justo dolor, lobortis.</span>
+				</p>
+			</div>
+			<div class="related-post">
+				<img src="static/images/g.jpg" alt=" " />
+				<h4>Donec sollicitudin molestie</h4>
+				<p>Aliquam dapibus tincidunt metus. 
+					<span>Praesent justo dolor, lobortis.</span>
+				</p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="responses">
+			<h3>3 Responses</h3>
+
+           <!-- Comment not showing -->
+			{% for comment in comments %}
+			<a href="/getcomment"> {{comment.name}}</a>
+
+			<div class="responses-response-fig">
+				<div class="response-fig">
+					<span> <h4>Test</h4></span>
+				</div>
+				<div class="response-fig-text">
+					<p><label> {{comment.date}}</label></p>
+					<p class="paragh">Lorem ipsum dolor sit amet, {{comment.message}}... </p>
+					<a href="#">Reply</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			{% endfor %}
+			<!-- <div class="responses-response-fig responses-mid">
+				<div class="response-fig">
+					<span> </span>
+				</div>
+				<div class="response-fig-text">
+					<p><label>12 July 2015 at 10:30am</label></p>
+					<p class="paragh">Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem.
+						Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris.
+						Fusce suscipit varius mi.</p>
+					<a href="#">Reply</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>  -->
+
+		</div>
+		<div class="comments">
+			<h3>leave a comment</h3> 
+			<form action="/comment" method="post">
+				<input type="text"  name = "name" placeholder="Name" required=" ">
+				<input type="text"  name = "email" placeholder="Email" required=" ">
+				<input type="text" name = "phone" placeholder="Phone Number" required=" ">
+				<textarea name = "message" placeholder="Message" required=" "></textarea>
+				<input type="submit" value="send">
+			</form>
+		</div>
+	</div>
+	</div>
+<!-- //blog -->
+{% endblock %}

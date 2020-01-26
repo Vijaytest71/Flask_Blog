@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- //banner -->
+<!-- banner-bottom -->
+	<div class="banner-bottom">
+	<div class="container">
+<!-- Slider-starts-Here -->
+			
+				<script src="{{url_for('static',filename='js/responsiveslides.min.js')}}"></script>
+				 <script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider3").responsiveSlides({
+				        auto: true,
+				        pager: true,
+				        nav: false,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+							    });
+				  </script>
+			<!--//End-slider-script -->
+			<div  id="top" class="callbacks_container">
+						<div class="banner-bottom-text">
+						</div>
+					<div>
+						<h3>Basic Action</h3>
+												<hr>
+						<a href="/dashboard"> <button class="btn btn-primary float-right"> Dashboard Home </button></a>
+						<a href="/logout"> <button class="btn btn-primary float-right"> Logout </button></a>
+<hr>
+		<h1>Add / Edit Posts</h1>
+  <form action="/edit/{{post.srno}}" method="post">
+				  <div class="clearfix">
+					<input type="text" class="form-control" name="title" placeholder="Title" value="{{post.title}}" required data-validation-required-message="Please enter Title">
+					  <br>
+					<input type="text" class="form-control" name="slug" placeholder="Slug" value="{{post.slug}}" required data-validation-required-message="Please enter Slug">
+					<br>
+					  <textarea type="text" class="form-control" name="content" placeholder="Content" required data-validation-required-message="Please enter Content">{{post.content}}</textarea>
+				 </div>
+	                 <br>
+				 	 <input  class="form-control" placeholder="Img_file" name="img_file" value="{{post.img_file}}"></input>
+				  				<br>
+					 <input type="submit"  class="btn btn-primary float-right" value="SEND" />
+
+				 <div class="clearfix"></div>
+			 </form>
+					</div>
+				</div>
+	</div>
+	</div>
+
+{% endblock %}

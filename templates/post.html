@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- //banner -->
+<!-- blog -->
+	<div class="blog">
+	<div class="container">
+		<div class="blog-left">
+
+			<!-- Fetch Data from Loop -->
+			{% for post in posts %}
+                <li> <a href="/post/{{post.slug }}"> {{ post.title }}</a>  </li>
+
+            <div class="blog-left-text">
+				<h3> <a href="/single"> {{post.title}} My Manual Testing World </a></h3>
+				{% set fname = 'images/' + post.img_file  %}
+				<a href="/single"><img src="{{ url_for('static', filename=fname)}}" alt=" " /></a>
+				<p> {{post.content[0:13]}}...
+                    Molestie sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere dit.
+					</p><p> {{post.date}}
+                <a href="/single" class="read-m">Read More</a>
+			</div>
+			{% endfor %}
+
+
+            <div class="blog-left-text blog-left-text-mid">
+				<h3><a href="/single"> My Automation World </a></h3>
+				<a href="/single"><img src="static/images/i.jpg" alt=" " /></a>
+				<p>Molestie sollicitudin molestie malesuada. Curabitur aliquet quam id dui posuere dit. 
+					Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consecteturs.
+					Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis,
+					lobortis dignissim, pulvinar ac, lorem. Lorem ipsum dolor sit amet,
+					consectetuer adipiscing elit. Praesent vestibulum molestie lacus. 
+					Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi.
+					Cum sociis natoque penatibus et magnis dis parturient montes, 
+					nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi…</p>
+				<a href="/single" class="read-m">Read More</a>
+			</div>
+
+<!-- End -->
+		<div class="clearfix">
+			<a class="btn btn-primary float-left" href="#">&rarr; Privious Posts </a>
+			<a class="btn btn-primary float-right" href="#">Next Posts &rarr;</a>
+		</div>
+		</div>
+		<div class="blog-right">
+			<h3>Comments</h3>
+			<div class="men-text">
+				<div class="men">
+					<span> </span>
+				</div>
+				<div class="men-txt">
+					<a href="#">Admin</a>
+					<p>03-01-2015</p>
+				</div>
+				<div class="clearfix"></div>
+				<p class="text">Cum sociis natoque penatibus et magnis dis parturient montes,
+				<span>nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi…</span></p>
+			</div>
+			<div class="men-text men-text-mid">
+				<div class="men">
+					<span> </span>
+				</div>
+				<div class="men-txt">
+					<a href="#">Admin</a>
+					<p>03-01-2015</p>
+				</div>
+				<div class="clearfix"></div>
+				<p class="text">Cum sociis natoque penatibus et magnis dis parturient montes,
+				<span>nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi…</span></p>
+			</div>
+			<div class="men-text">
+				<div class="men">
+					<span> </span>
+				</div>
+				<div class="men-txt">
+					<a href="#">Admin</a>
+					<p>03-01-2015</p>
+				</div>
+				<div class="clearfix"></div>
+				<p class="text">Cum sociis natoque penatibus et magnis dis parturient montes,
+				<span>nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi…</span></p>
+			</div>
+			<div class="recent">
+				<h3>Recent Posts</h3>
+				<div class="fig-txt">
+					<div class="fig-txt-fig">
+						<img src="static/images/c.jpg" alt=" " />
+					</div>
+					<div class="fig-txt-text">
+						<p><label>June 31,2013 at 12:30pm</label></p>
+						<h4>Donec sollicitudin molestie</h4>
+						<p>Aliquam dapibus tincidunt metus. 
+						Praesent justo dolor, lobortis quis, lobortis dignissim.
+						</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="fig-txt fig-txt-mid">
+					<div class="fig-txt-fig">
+						<img src="static/images/d.jpg" alt=" " />
+					</div>
+					<div class="fig-txt-text">
+						<p><label>April 12,2011 at 10:30pm</label></p>
+						<h4>Donec sollicitudin molestie</h4>
+						<p>Aliquam dapibus tincidunt metus. 
+						Praesent justo dolor, lobortis quis, lobortis dignissim.
+						</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="fig-txt">
+					<div class="fig-txt-fig">
+						<img src="static/images/d.png" alt=" " />
+					</div>
+					<div class="fig-txt-text">
+						<p><label>July 31,2015 at 9:30am</label></p>
+						<h4>Donec sollicitudin molestie</h4>
+						<p>Aliquam dapibus tincidunt metus. 
+						Praesent justo dolor, lobortis quis, lobortis dignissim.
+						</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="categories">
+				<h3>Categories</h3>
+				<ul>
+					<li><a href="#">Aliquam dapibus tincidunt</a></li>
+					<li><a href="#">Donec sollicitudin molestie</a></li>
+					<li><a href="#">Fusce feugiat malesuada odio</a></li>
+					<li><a href="#">Cum sociis natoque penatibus</a></li>
+					<li><a href="#">Magnis dis parturient montes</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	</div>
+<!-- //blog -->
+{% endblock %}

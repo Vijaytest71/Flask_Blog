@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- //banner -->
+<!-- banner-bottom -->
+	<div class="banner-bottom">
+	<div class="container">
+<!-- Slider-starts-Here -->
+			
+				<script src="{{url_for('static',filename='js/responsiveslides.min.js')}}"></script>
+				 <script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider3").responsiveSlides({
+				        auto: true,
+				        pager: true,
+				        nav: false,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+							    });
+				  </script>
+			<!--//End-slider-script -->
+			<div  id="top" class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner-bottom-text">
+							<div class="fig2">
+								<a href="#"><span> </span></a>
+							</div>
+							<p>“Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Proin <span>convallis lacus libero, id congue neque 
+								fermentum et.”</span></p>
+							<ul>
+								<li><a href="#">@Username Twitter</a></li>
+								<li>Posted 20s ago</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="banner-bottom-text">
+							<div class="fig3">
+								<a href="#"><span> </span></a>
+							</div>
+							<p>“Pellentesque in elit dapibus,consectetur adipiscing elit. Proin <span>convallis lacus libero, id congue neque 
+								fermentum et.”</span></p>
+							<ul>
+								<li><a href="#">@Username Vimeo</a></li>
+								<li>Posted 10s ago</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="banner-bottom-text">
+							<div class="fig4">
+								<a href="#"><span> </span></a>
+							</div>
+							<p>“Orci porta ipsum
+							adipiscing ,consectetur adipiscing elit. Proin <span>convallis lacus libero, id congue neque 
+								fermentum et.”</span></p>
+							<ul>
+								<li><a href="#">@Username Dribbble</a></li>
+								<li>Posted 15s ago</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+	</div>
+	</div>
+<!-- //banner-bottom -->
+<!-- about -->
+	<div id="about" class="about">
+	<div class="container">
+		<h4>ABOUT US</h4>
+		<h2>WE DESIGN ADVANCED<span>UI & WEB</span></h2>
+		<p>Nulla elementum arcu sed lacinia malesuada.
+		Sed lacus nunc, pellentesque et purus nec, <span>dignissim dapibus quam.
+		Vivamus rhoncus augue non libero tempor ullamcorper. 
+		Fusce nec</span> <span>justo varius, euismod velit tincidunt, auctor est. 
+		Ut at turpis in nunc porta ornare ac nec</span> ante. Aenean eu odio nec dui tincidunt faucibus</p>
+		<div class="blog-1">
+			<a href="/blog">Read our blog</a>
+		</div>
+	</div>
+	</div>
+<!-- //about -->
+<!-- work -->
+	<div class="work">
+	<div class="container">
+		<h4>OUR WORK</h4>
+		<script src="{{url_for('static',filename='jquery-1.11.0.min.js')}}"></script>
+	<script>
+		$(document).ready(function () {
+		    size_li = $("#myList li").size();
+		    x=1;
+		    $('#myList li:lt('+x+')').show();
+		    $('#loadMore').click(function () {
+		        x= (x+1 <= size_li) ? x+1 : size_li;
+		        $('#myList li:lt('+x+')').show();
+		    });
+		    $('#showLess').click(function () {
+		        x=(x-1<0) ? 1 : x-1;
+		        $('#myList li').not(':lt('+x+')').hide();
+		    });
+		});
+	</script>
+		<div class="load_more">	
+			<ul id="myList">
+				<li>
+					<div class="blog-text">
+					<div class="work-grids">
+						<div class="work-grid">
+							<img src="static/images/k.jpg" alt=" " />
+							<p>PLANET SURFACE</p>
+						</div>
+						<div class="work-grid work-mid">
+							<img src="static/images/m.jpg" alt=" " />
+							<p>CONSTELLATIONS</p>
+						</div>
+						<div class="work-grid">
+							<img src="static/images/l.jpg" alt=" " />
+							<p>ROCK FORMATION</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-text">
+						<div class="blog-grid1 g_r">
+							<div class="work-grid">
+								<img src="static/images/n.jpg" alt=" " />
+								<p>PLANET SURFACE</p>
+							</div>
+							<div class="work-grid work-mid">
+								<img src="static/images/k.jpg" alt=" " />
+								<p>CONSTELLATIONS</p>
+							</div>
+							<div class="work-grid">
+								<img src="static/images/m.jpg" alt=" " />
+								<p>ROCK FORMATION</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-text">
+						<div class="blog-grid1 l_g_r">
+							<div class="work-grid">
+								<img src="static/images/k.jpg" alt=" " />
+								<p>PLANET SURFACE</p>
+							</div>
+							<div class="work-grid work-mid">
+								<img src="static/images/m.jpg" alt=" " />
+								<p>CONSTELLATIONS</p>
+							</div>
+							<div class="work-grid">
+								<img src="static/images/n.jpg" alt=" " />
+								<p>ROCK FORMATION</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+<!-- //work -->
+<!-- map -->
+	<div class="map">
+		<h4>FIND US HERE</h4>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206041.36950589763!2d-116.06122599999999!3d36.20555895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c6363f86a4ad87%3A0xcf437da0f54b779f!2sPahrump%2C+NV%2C+USA!5e0!3m2!1sen!2sin!4v1425531794472" frameborder="0" style="border:0"></iframe>
+		<div class="map-color">
+			
+		</div>
+		<div class="dot-map">
+			<span> </span>
+		</div>
+		<div class="hire-us">
+			<a href="#">Hire Us</a>
+		</div>
+	</div>
+<!-- //map -->
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/first_flask_web",
+    "prod_uri": "mysql://root:@localhost/prod_uri",
+    "fb_url": "https://facebook.com/first_flask",
+    "tw_url": "https://twitter.com/first_flask",
+    "blog_name" : "Flask Website",
+    "gmail-user": "vijaytest71@gmail.com",
+    "gmail-password" : "Vijay@123",
+    "no_of_posts" : 5,
+    "admin_user" : "Vijay",
+    "admin_password" : "Vijay@123",
+    "upload_location" : "C:\\Users\\VJ\\Desktop\\Flask_Images"
+
+  }
+
+}
